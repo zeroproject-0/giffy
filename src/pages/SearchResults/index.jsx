@@ -1,14 +1,16 @@
-import React from 'react';
 import ListOfGifs from '../../components/ListOfGifs';
+import React from 'react';
+import useGifs from '../../hooks/useGifs';
 
 const SearchResults = ({ params }) => {
 	const { keyword } = params;
+	const { loading, gifs } = useGifs({ keyword });
 
 	return (
-		<div>
-			<h1>Search Results</h1>
-			<ListOfGifs keyword={keyword} />
-		</div>
+		<>
+			<h1>Results</h1>
+			{loading ? <h4>Buscando...</h4> : <ListOfGifs gifs={gifs} />}
+		</>
 	);
 };
 
