@@ -1,0 +1,15 @@
+.link {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(48, 48, 48, 0.8);
+	padding: 2px 4px;
+	font-size: small;
+}
