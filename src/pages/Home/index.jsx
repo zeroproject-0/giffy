@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'wouter';
-import ListOfGifs from '../../components/ListOfGifs';
-import useGifs from '../../hooks/useGifs';
-
-const SEARCHS = ['rick', 'morty', 'javascript', 'rust'];
+import ListOfGifs from '@/components/ListOfGifs';
+import TrendingSearches from '@/components/TrendingSearches';
+import useGifs from '@/hooks/useGifs';
 
 const Home = () => {
 	const [keyword, setKeyword] = useState('');
@@ -27,13 +26,7 @@ const Home = () => {
 
 			<h2>Última búsqueda</h2>
 			<ListOfGifs gifs={gifs} />
-			{/* <ul>
-				{SEARCHS.map((search) => (
-					<li key={search}>
-						<Link to={`/search/${search}`}>{search}</Link>
-					</li>
-				))} 
-        </ul>*/}
+			<TrendingSearches />
 		</>
 	);
 };
