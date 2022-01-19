@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import Gif from '../Gif';
 
-export default function ListOfGifs({ gifs }) {
+const ListOfGifs = ({ gifs }) => {
 	return (
 		<div className={styles.list}>
 			{gifs.map(({ title, url, id }) => (
@@ -9,4 +9,6 @@ export default function ListOfGifs({ gifs }) {
 			))}
 		</div>
 	);
-}
+};
+
+export default ListOfGifs;

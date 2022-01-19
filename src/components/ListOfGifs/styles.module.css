@@ -3,7 +3,7 @@
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	max-width: 90%;
 	gap: 1rem;
-	min-height: 80vh;
+	min-height: 100vh;
 	align-items: center;
 	grid-template-rows: masonry;
 }

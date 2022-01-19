@@ -3,12 +3,13 @@ import ListOfGifs from '@/components/ListOfGifs';
 import useGifs from '@/hooks/useGifs';
 import useNearScreen from '@/hooks/useNearScreen';
 import debounce from 'just-debounce-it';
+import Loader from '@/components/Loader';
 
 const SearchResults = ({ params }) => {
 	const { keyword } = params;
 	const { loading, loadingPage, gifs, setPage } = useGifs({ keyword });
 	const externalRef = useRef();
-	const { isNearScreen, fromRef } = useNearScreen({
+	const { isNearScreen } = useNearScreen({
 		externalRef: !loading && externalRef,
 		once: false,
 	});
@@ -28,7 +29,7 @@ const SearchResults = ({ params }) => {
 		<>
 			<h1>Results: {decodeURI(keyword)}</h1>
 			{loading ? (
-				<h4>Buscando...</h4>
+				<Loader />
 			) : (
 				<>
 					<ListOfGifs gifs={gifs} />
