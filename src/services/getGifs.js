@@ -9,10 +9,10 @@ export default function getGifs({ keyword, limit = 5, page = 0 } = {}) {
 		.then((response) => response.json())
 		.then((d) => {
 			const { data } = d;
-			const gifs = data.map((image, index) => {
+			const gifs = data.map((image) => {
 				const { url } = image.images.downsized_medium;
 				const { title, id } = image;
-				return { title, id: id + index, url };
+				return { title, id, url };
 			});
 			return gifs;
 		});
